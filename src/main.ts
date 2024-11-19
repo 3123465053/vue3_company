@@ -22,5 +22,29 @@ console.log(import.meta.env)
 //@ts-ignore
 import 'virtual:svg-icons-register'
 
+//当全局组件较多时 此方法不适用(使用下面的方法)
+//将自定义的组件设置为全局组件
+// import SvgIcon from '@/components/SvgIcon/index.vue';
+// app.component('SvgIcon',SvgIcon);  // “SvgIcon” 使用名称 
+
+//当全局组件较多时，使用此方法 单独封装一个文件
+//@ts-ignore
+import gloalComponent from '@/components';
+app.use(gloalComponent)
+
+//引入全局模版样式
+import '@/style/index.scss'
+
+//测试接口代码
+import axios from 'axios'
+axios({
+    url:"/api/user/login",
+    method:"post",
+    data:{
+        username:"admin",
+        password:"111111"
+    }
+})
+
 //将应用挂载到挂载点上
 app.mount('#app')

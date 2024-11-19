@@ -1,10 +1,12 @@
 <template>
+ <div>
   <h1>一级标题</h1>
-  <el-button type="primary" size="default" :icon="Edit"></el-button>
-  <h2>svg图标加载</h2>
+ </div>
+  <!-- <el-button type="primary" size="default" :icon="Edit"></el-button>
+  <h2>svg图标加载</h2> -->
 
   <!-- 自己封装了一次 -->
-   <svg-icon name="phone" color="red" width="20px"></svg-icon>
+   <!-- <svg-icon name="phone" color="red" width="60px" height="60px"></svg-icon> -->
 
  <!-- 直接使用 -->
     <!-- <svg>
@@ -14,5 +16,13 @@
 
 <script setup lang="ts">
 import { Edit } from '@element-plus/icons-vue';
- import SvgIcon from '@/components/SvgIcon/index.vue'
+//  import SvgIcon from '@/components/SvgIcon/index.vue'
 </script>
+
+<style scoped lang="scss">
+  div {
+    h1{
+   color: $color
+   }
+  }
+</style>
