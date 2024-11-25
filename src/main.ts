@@ -5,8 +5,8 @@ import 'element-plus/dist/index.css'
 
 //@ts-ignore   忽略类型检测，避免打包时错误
 import  zh_cn  from 'element-plus/dist/locale/zh-cn.mjs'
-
-
+import router from './router'
+import pinia from './store'
 
 //获取应用实例对象
 const app=createApp(App)
@@ -45,6 +45,12 @@ axios({
         password:"111111"
     }
 })
+
+//注册路由
+app.use(router)
+
+//注册本地存储
+app.use(pinia);
 
 //将应用挂载到挂载点上
 app.mount('#app')
